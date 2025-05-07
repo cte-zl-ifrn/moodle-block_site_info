@@ -1,0 +1,46 @@
+.site-info-header {
+    margin-bottom: 2rem;
+}
+
+@media (max-width: 800px) {
+    .hero > div {
+        flex: 0 0 50%;
+        max-width: 50%;
+
+        .site-info-header-column {
+            .site-info-header-column-number {
+                margin-top: 10px;
+            }
+        }
+    }
+}
+
+.site-info-header-column {
+    .site-info-header-column-number {
+        margin: 0;
+        font: var(--font-heading7);
+    }
+
+    .site-info-header-column-title {
+        margin: 5px 0 10px 0;
+        font: var(--font-heading2);
+    }
+
+    .site-info-header-column-text {
+        margin: 0;
+        font: var(--font-heading4);
+    }
+}
+
+.site-info-main-header-about-button {
+    width: 100%;
+    display: block;
+    text-align: center;
+    margin-right: auto;
+    margin-left: auto;
+    margin-block: 40px;
+    a {
+        color: var(--general-white);
+        text-decoration: none;
+    }
+}
