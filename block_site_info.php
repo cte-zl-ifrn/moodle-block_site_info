@@ -49,8 +49,8 @@ class block_site_info extends block_base {
 
         global $OUTPUT;
 
-        $html = !empty($this->config->config_htmlcontent['text']) 
-            ? $this->config->config_htmlcontent['text']
+        $html = !empty($this->config->htmlcontent['text']) 
+            ? $this->config->htmlcontent['text']
             : $this->get_default_htmlcontent()['text'];
 
         $data = ['config_htmlcontent' => $html];
