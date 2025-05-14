@@ -21,12 +21,14 @@
  * @copyright   2025 Your Name <you@example.com>
  * @license     https://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
-class block_site_info extends block_base {
+class block_site_info extends block_base
+{
 
     /**
      * Initializes class member variables.
      */
-    public function init() {
+    public function init()
+    {
         // Needed by Moodle to differentiate between blocks.
         $this->title = get_string('pluginname', 'block_site_info');
     }
@@ -36,7 +38,8 @@ class block_site_info extends block_base {
      *
      * @return stdClass The block contents.
      */
-    public function get_content() {
+    public function get_content()
+    {
 
         if ($this->content !== null) {
             return $this->content;
@@ -49,7 +52,7 @@ class block_site_info extends block_base {
 
         global $OUTPUT;
 
-        $html = !empty($this->config->htmlcontent['text']) 
+        $html = !empty($this->config->htmlcontent['text'])
             ? $this->config->htmlcontent['text']
             : $this->get_default_htmlcontent()['text'];
 
@@ -67,7 +70,8 @@ class block_site_info extends block_base {
      *
      * The function is called immediately after init().
      */
-    public function specialization() {
+    public function specialization()
+    {
         // Load user defined title and make sure it's never empty.
         $this->title = '';
     }
@@ -77,13 +81,14 @@ class block_site_info extends block_base {
      *
      * @return string[] Array of pages and permissions.
      */
-    public function applicable_formats() {
+    public function applicable_formats()
+    {
         return [
             'admin' => false,
             'site-index' => true,
             'course-view' => false,
             'mod' => false,
-            'my' => false,
+            'my' => true,
         ];
     }
 
@@ -92,7 +97,8 @@ class block_site_info extends block_base {
      *
      * @return array
      */
-    public function get_default_htmlcontent(): array {
+    public function get_default_htmlcontent(): array
+    {
         return [
             'text' => '
             <div class="site-info-header">
