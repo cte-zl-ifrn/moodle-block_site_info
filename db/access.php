@@ -11,4 +11,11 @@ $capabilities = [
             'manager' => CAP_ALLOW,
         ],
     ],
+    'block/site_info:myaddinstance' => [
+        'captype' => 'write',
+        'contextlevel' => CONTEXT_SYSTEM,
+        'archetypes' => [
+            'user' => CAP_ALLOW
+        ],
+    ],
 ];
